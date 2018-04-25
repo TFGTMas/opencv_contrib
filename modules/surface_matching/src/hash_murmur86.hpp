@@ -94,10 +94,12 @@ void hashMurmurx86 ( const void * key, const int len, const uint seed, void * ou
 # define READ_UINT32(ptr)   (*((uint32_t*)(ptr)))
 #elif (defined(__BYTE_ORDER__) && defined(__ORDER_BIG_ENDIAN__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
     && defined(__GNUC__) && (__GNUC__>4 || (__GNUC__==4 && __GNUC_MINOR__>=3))
+qqq 123 213 qqq
 # define READ_UINT32(ptr)   (__builtin_bswap32(*((uint32_t*)(ptr))))
 #endif
 
 #ifndef READ_UINT32
+qqq 123 213 qqq
 /* Unknown endianess so last resort is to read individual bytes */
 # define READ_UINT32(ptr)   (ptr[0]|ptr[1]<<8|ptr[2]<<16|ptr[3]<<24)
 # undef UNALIGNED_SAFE
